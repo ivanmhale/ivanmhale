@@ -1,0 +1,72 @@
+#about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+
+  .pics {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .pic {
+      width: 10rem;
+      height: min-content;
+      border: 5px double $colJewel;
+      padding: 1rem;
+
+      @include responsiveMin(phone) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      filter: grayscale(50%);
+      transition-duration: 0.3s;
+      &:hover {
+        filter: grayscale(0%);
+        z-index: 9;
+        border-style: solid;
+        padding: 0;
+      }
+      &_1 {
+        @include responsiveMin(phone) {
+          transform: translate(-100%, -75%);
+        }
+      }
+      &_2 {
+        @include responsiveMin(phone) {
+          transform: translate(-5%, -90%);
+        }
+      }
+      &_3 {
+        @include responsiveMin(phone) {
+          transform: translate(-50%, 0%);
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .words {
+    padding: 1rem;
+    .hello-world {
+      text-align: center;
+      font-family: $fontSec;
+      color: $colFuschia;
+      position: relative;
+      text-shadow: 2px 2px $colVoid;
+    }
+    p {
+      color: $colJewel;
+      line-height: 1.5rem;
+    }
+  }
+}
