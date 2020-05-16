@@ -1,5 +1,6 @@
 #samples {
   // height: max-content;
+  padding-bottom: 3rem;
   h1 {
     width: 100vw;
     text-align: center;
@@ -9,7 +10,7 @@
   }
   h3 {
     text-align: center;
-    margin: 1rem auto;
+    margin: 1rem;
   }
   .container {
     width: 100vw;
@@ -22,39 +23,19 @@
 }
 
 .project {
-  width: 100%;
-  height: 14rem;
-  position: relative;
-  &:hover {
-    .side_1 {
-      transform: translateX(-50%) rotateX(180deg);
-    }
-
-    .side_2 {
-      transform: translateX(-50%) rotateX(0deg);
-    }
-  }
   .side {
-    position: absolute;
-    top: 0;
-    left: 50%;
     width: 13.5rem;
     height: 100%;
     overflow: hidden;
-    backface-visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition-duration: 0.5s;
-    transform: translateX(-50%);
     background-color: white;
-    box-shadow: 0.5rem 0.5rem $colFuschia;
     &_1 {
       padding: 0.5rem;
     }
     &_2 {
       background-color: #eee;
-      transform: translateX(-50%) rotateX(180deg);
       a {
         height: 100%;
         display: flex;
@@ -74,5 +55,41 @@
     img {
       width: 100%;
     }
+  }
+
+  @include responsiveMin(phone) {
+    height: 14rem;
+    position: relative;
+    width: 100%;
+    &:hover {
+      .side_1 {
+        transform: translateX(-50%) rotateX(180deg);
+      }
+
+      .side_2 {
+        transform: translateX(-50%) rotateX(0deg);
+      }
+    }
+    .side {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      box-shadow: 0.5rem 0.5rem $colFuschia;
+      backface-visibility: hidden;
+      transition-duration: 0.5s;
+      transform: translateX(-50%);
+      &_2 {
+        transform: translateX(-50%) rotateX(180deg);
+      }
+    }
+  }
+
+  @include responsive(phone) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid $colFuschia;
+    width: min-content;
+    margin: auto;
   }
 }

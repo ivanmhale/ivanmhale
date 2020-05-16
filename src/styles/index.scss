@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 $colVoid: #0e0b16;
 $colFuschia: #a239ca;
 $colJewel: #4717f6;
 $colStark: #e7dfdd;
-$fontPri: "Roboto Mono", monospace;
-$fontSec: "Permanent Marker", cursive;
+$fontPri: 'Roboto Mono', monospace;
+$fontSec: 'Permanent Marker', cursive;
 $navHeight: 8.5rem;
 
 @mixin responsive($breakpoint) {
@@ -190,7 +190,7 @@ body {
   height: calc(100% - 8.3rem);
   display: grid;
   grid-template-rows: repeat(4, 100%);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 section {
@@ -203,7 +203,7 @@ section {
   color: white;
 }
 
-@import "_home";
-@import "_about";
-@import "_samples";
-@import "_contact";
+@import '_home';
+@import '_about';
+@import '_samples';
+@import '_contact';

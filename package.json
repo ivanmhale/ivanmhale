@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server  --config webpack.dev.js --open",
-    "build": "webpack --config webpack.prod.js",
-    "watch:sass": "node-sass styles/sass/index.scss dist/index.css -w",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' dist/index.css -o styles/index.prefix.css",
-    "compress:css": "node-sass styles/index.prefix.css dist/index.css --output-style compressed",
-    "build:css": "npm-run-all prefix:css compress:css"
+    "webpack:build": "webpack --config webpack.prod.js",
+    "pdf": "cp src/img/ivan_m_hale.pdf dist/img/ivan_m_hale.pdf",
+    "docx": "cp src/img/ivan_m_hale.docx dist/img/ivan_m_hale.docx",
+    "build": "run-s webpack:build pdf docx"
   },
   "author": "ivanmhale",
   "license": "ISC",
