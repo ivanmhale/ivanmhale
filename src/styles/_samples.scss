@@ -23,19 +23,28 @@
 }
 
 .project {
+  cursor: pointer;
   .side {
     width: 13.5rem;
     height: 100%;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: white;
+
     &_1 {
-      padding: 0.5rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        max-width: 100%;
+      }
     }
+
     &_2 {
       background-color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: white;
       a {
         height: 100%;
         display: flex;
@@ -51,9 +60,9 @@
           padding: 0.5rem;
         }
       }
-    }
-    img {
-      width: 100%;
+      img {
+        width: 100%;
+      }
     }
   }
 
@@ -74,7 +83,9 @@
       position: absolute;
       top: 0;
       left: 50%;
-      box-shadow: 0.5rem 0.5rem $colFuschia;
+      // box-shadow: 0.5rem 0.5rem $colFuschia;
+      border-radius: 1rem;
+      box-shadow: 0.5rem 0.5rem 0.5rem rgb(126, 126, 126);
       backface-visibility: hidden;
       transition-duration: 0.5s;
       transform: translateX(-50%);
@@ -88,8 +99,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 5px solid $colFuschia;
     width: min-content;
     margin: auto;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgb(126, 126, 126);
+    padding: 1rem;
   }
 }

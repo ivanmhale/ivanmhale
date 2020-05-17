@@ -13,7 +13,11 @@
   "author": "ivanmhale",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
     "autoprefixer": "^9.5.1",
+    "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
@@ -32,6 +36,8 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "clean-webpack-plugin": "^3.0.0"
+    "clean-webpack-plugin": "^3.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }

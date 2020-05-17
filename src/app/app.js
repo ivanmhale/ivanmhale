@@ -1,4 +1,5 @@
 import '../styles/index.scss';
+import './react';
 const name = document.getElementById('name');
 const liAbout = document.getElementById('nav_about');
 const liSamples = document.getElementById('nav_samples');

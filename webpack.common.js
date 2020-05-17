@@ -1,6 +1,3 @@
-const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
   entry: {
     main: './src/app/app.js',
@@ -19,6 +16,13 @@ module.exports = {
             name: '[name].[hash].[ext]',
             outputPath: 'img',
           },
+        },
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
         },
       },
     ],

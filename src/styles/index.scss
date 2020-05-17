@@ -61,8 +61,6 @@ html {
   font-family: $fontPri;
 }
 
-body {
-}
 @keyframes flash {
   0% {
     background-color: $colFuschia;
@@ -141,6 +139,9 @@ nav {
     justify-content: center;
     &_item {
       padding: 1rem;
+      @include responsive(phone) {
+        font-size: 0.5rem;
+      }
       &:hover {
         animation-name: flash;
         animation-iteration-count: 1;
@@ -152,7 +153,6 @@ nav {
           animation-duration: 0.5s;
           animation-fill-mode: forwards;
         }
-        cursor: default;
       }
     }
   }
@@ -175,10 +175,6 @@ nav {
   }
 }
 
-nav {
-  height: max-content;
-}
-
 body {
   height: 100vh;
   overflow: hidden;
@@ -187,14 +183,14 @@ body {
 }
 
 .window {
-  height: calc(100% - 8.3rem);
+  height: 100%;
   display: grid;
   grid-template-rows: repeat(4, 100%);
   transition-duration: 0.5s;
 }
 
 section {
-  max-height: 100%;
+  height: calc(100% - #{$navHeight});
   overflow-y: scroll;
 }
 
