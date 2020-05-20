@@ -1,25 +1,26 @@
 #about {
-  display: grid;
   justify-content: center;
   align-items: center;
 
   @include responsiveMin(tab-port) {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 
   @include responsive(tab-port) {
-    grid-template-rows: repeat(2, 1fr);
+    flex-direction: column;
   }
 
   .pics {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
     display: flex;
-    // flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+
+    @include responsiveMin(tab-port) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     .pic {
       height: min-content;

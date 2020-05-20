@@ -8,6 +8,11 @@ $fontPri: 'Roboto Mono', monospace;
 $fontSec: 'Permanent Marker', cursive;
 $navHeight: 8.5rem;
 
+::selection {
+  background-color: $colFuschia;
+  color: white;
+}
+
 @mixin responsive($breakpoint) {
   @if $breakpoint == phone {
     @media only screen and (max-width: 600px) {
@@ -139,6 +144,7 @@ nav {
     justify-content: center;
     &_item {
       padding: 1rem;
+      cursor: pointer;
       @include responsive(phone) {
         font-size: 0.5rem;
       }
@@ -176,27 +182,25 @@ nav {
 }
 
 body {
-  height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .window {
   height: 100%;
   display: grid;
   grid-template-rows: repeat(4, 100%);
-  transition-duration: 0.5s;
+  transition: all .3s;
 }
 
 section {
-  height: calc(100% - #{$navHeight});
-  overflow-y: scroll;
-}
-
-::selection {
-  background-color: $colFuschia;
-  color: white;
+  overflow: scroll;
+  &:not(:last-child) {
+    height: 100%;
+    padding-bottom: calc(#{$navHeight} + 1rem);
+  }
 }
 
 @import '_home';
