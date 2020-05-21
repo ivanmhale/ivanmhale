@@ -1,137 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
-$colVoid: #0e0b16;
-$colFuschia: #a239ca;
-$colJewel: #4717f6;
-$colStark: #e7dfdd;
-$fontPri: 'Roboto Mono', monospace;
-$fontSec: 'Permanent Marker', cursive;
-$navHeight: 8.5rem;
+@import 'variables';
+@import 'home';
+@import 'about';
+@import 'samples';
+@import 'contact';
+@import 'grid';
 
 ::selection {
   background-color: $colFuschia;
   color: white;
 }
 
-@mixin responsive($breakpoint) {
-  @if $breakpoint == phone {
-    @media only screen and (max-width: 600px) {
-      @content;
-    }
-  }
-  @if $breakpoint == tab-port {
-    @media only screen and (max-width: 900px) {
-      @content;
-    }
-  }
-  @if $breakpoint == tab-land {
-    @media only screen and (max-width: 1200px) {
-      @content;
-    }
-  }
-  @if $breakpoint == big-desk {
-    @media only screen and (min-width: 1800px) {
-      @content;
-    }
-  }
-}
-
-@mixin responsiveMin($breakpoint) {
-  @if $breakpoint == phone {
-    @media only screen and (min-width: 600px) {
-      @content;
-    }
-  }
-  @if $breakpoint == tab-port {
-    @media only screen and (min-width: 900px) {
-      @content;
-    }
-  }
-  @if $breakpoint == tab-land {
-    @media only screen and (min-width: 1200px) {
-      @content;
-    }
-  }
-}
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html {
   font-size: 16px;
   font-family: $fontPri;
-}
-
-@keyframes flash {
-  0% {
-    background-color: $colFuschia;
-  }
-
-  24% {
-    background-color: $colFuschia;
-  }
-  25% {
-    background-color: $colStark;
-  }
-
-  49% {
-    background-color: $colStark;
-  }
-  50% {
-    background-color: $colFuschia;
-  }
-
-  74% {
-    background-color: $colFuschia;
-  }
-  75% {
-    background-color: $colStark;
-  }
-
-  99% {
-    background-color: $colStark;
-  }
-  100% {
-    background-color: $colFuschia;
-  }
-}
-
-@keyframes flash2 {
-  0% {
-    color: $colStark;
-  }
-
-  24% {
-    color: $colStark;
-  }
-  25% {
-    color: $colFuschia;
-  }
-
-  49% {
-    color: $colFuschia;
-  }
-  50% {
-    color: $colStark;
-  }
-
-  74% {
-    color: $colStark;
-  }
-  75% {
-    color: $colFuschia;
-  }
-
-  99% {
-    color: $colFuschia;
-  }
-  100% {
-    color: $colStark;
-  }
 }
 
 nav {
@@ -186,13 +75,14 @@ body {
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .window {
   height: 100%;
   display: grid;
   grid-template-rows: repeat(4, 100%);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 section {
@@ -202,8 +92,3 @@ section {
     padding-bottom: calc(#{$navHeight} + 1rem);
   }
 }
-
-@import '_home';
-@import '_about';
-@import '_samples';
-@import '_contact';
